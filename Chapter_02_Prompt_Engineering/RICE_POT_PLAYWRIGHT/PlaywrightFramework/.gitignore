@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.example
+node_modules/
+reports/
+test-results/
+playwright-report/
+playwright/.cache/
