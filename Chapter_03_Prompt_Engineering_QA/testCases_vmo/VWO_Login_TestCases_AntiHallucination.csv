@@ -1,0 +1,92 @@
+﻿"TC_ID","Module","Source Fact IDs","Test Scenario","Test Type","Preconditions","Test Steps","Test Data","Expected Result","Priority"
+"TC_AH_001","UI","L01","Verify the browser tab title","UI","Login page https://app.wingify.com/#/login is open","1. Read the browser tab title","N/A","Title is ""Login - Wingify""","P3"
+"TC_AH_002","UI","L02","Verify the Wingify logo is displayed","UI","Login page https://app.wingify.com/#/login is open","1. Observe the top of the login form","N/A","""Wingify"" logo image is displayed","P3"
+"TC_AH_003","UI","P01, L03","Verify the ""Email address"" field and placeholder","UI","Login page https://app.wingify.com/#/login is open","1. Observe the ""Email address"" textbox","N/A","Field is visible with placeholder ""Enter email ID""","P1"
+"TC_AH_004","UI","P01, L04","Verify the ""Password"" field and placeholder","UI","Login page https://app.wingify.com/#/login is open","1. Observe the ""Password"" textbox","N/A","Field is visible with placeholder ""Enter password""","P1"
+"TC_AH_005","UI","L05","Verify the ""Toggle password visibility"" button is displayed","UI","Login page https://app.wingify.com/#/login is open","1. Observe the ""Password"" textbox","N/A","""Toggle password visibility"" button is displayed with the ""Password"" field","P2"
+"TC_AH_006","UI","L06","Verify the ""Forgot Password?"" option is displayed","UI","Login page https://app.wingify.com/#/login is open","1. Observe the login form","N/A","""Forgot Password?"" button is displayed","P1"
+"TC_AH_007","UI","P02, L07","Verify the ""Remember me"" checkbox is displayed","UI","Login page https://app.wingify.com/#/login is open","1. Observe the login form","N/A","""Remember me"" checkbox is displayed","P2"
+"TC_AH_008","UI","L08","Verify the ""Sign in"" button is displayed","UI","Login page https://app.wingify.com/#/login is open","1. Observe the login form","N/A","""Sign in"" button is displayed","P1"
+"TC_AH_009","UI","L09","Verify the alternative sign-in options are displayed","UI","Login page https://app.wingify.com/#/login is open","1. Observe the section below the ""Sign in"" button","N/A","""Or"" separator followed by ""Sign in with Google"", ""Sign in using SSO"" and ""Sign in with Passkey""","P1"
+"TC_AH_010","UI","P03, L11","Verify the free trial registration link is displayed","UI","Login page https://app.wingify.com/#/login is open","1. Observe the lower part of the login form","N/A","""New to Wingify?"" text with a ""Start a FREE TRIAL"" link is displayed","P2"
+"TC_AH_011","UI","L12","Verify the legal consent text and links","UI","Login page https://app.wingify.com/#/login is open","1. Observe the bottom of the login form","N/A","Text ""By continuing, you agree to Wingify's Privacy policy & Terms."" with ""Privacy policy"" and ""Terms"" links","P3"
+"TC_AH_012","UI","L18","Verify the right panel content","UI","Login page https://app.wingify.com/#/login is open","1. Observe the right side of the page","N/A","""Agentic Experience Optimization Platform"" and heading ""Make every digital experience relevant"" are displayed","P3"
+"TC_AH_013","Authentication","P05, P26","Verify login with valid credentials","Positive","Login page https://app.wingify.com/#/login is open; valid credentials for an active account are available","1. Enter valid email in ""Email address""
+2. Enter valid password in ""Password""
+3. Click ""Sign in""","Email: <valid_email>; Password: <valid_password>","User is transitioned to the main dashboard. Dashboard URL: Insufficient information to determine.","P0"
+"TC_AH_014","Authentication","P05, P12","Verify login with a registered email and a wrong password","Negative","Login page https://app.wingify.com/#/login is open; valid credentials for an active account are available","1. Enter valid email
+2. Enter a wrong password
+3. Click ""Sign in""","Email: <valid_email>; Password: WrongPass#123","Authentication fails and an error message is displayed. Exact text: Insufficient information to determine.","P0"
+"TC_AH_015","Authentication","L14","Verify login with an unregistered email","Negative","Login page https://app.wingify.com/#/login is open","1. Enter an unregistered email
+2. Enter any password
+3. Click ""Sign in""","Email: qa.probe.nonexistent.7731@example.com; Password: WrongPass#123","User remains on #/login and error ""Your email, password, IP address or location did not match"" is displayed","P0"
+"TC_AH_016","Authentication","L14","Verify the error message is not shown before any action","UI","Login page https://app.wingify.com/#/login is open","1. Observe the form without interacting","N/A","Error ""Your email, password, IP address or location did not match"" is not displayed","P2"
+"TC_AH_017","Input Validation","L14","Verify submitting with both fields empty","Negative","Login page https://app.wingify.com/#/login is open","1. Leave both fields empty
+2. Click ""Sign in""","Email: (empty); Password: (empty)","User remains on #/login and error ""Your email, password, IP address or location did not match"" is displayed","P1"
+"TC_AH_018","Input Validation","L14","Verify submitting with an email and no password","Negative","Login page https://app.wingify.com/#/login is open","1. Enter an email
+2. Leave ""Password"" empty
+3. Click ""Sign in""","Email: qa.probe@example.com; Password: (empty)","User remains on #/login and error ""Your email, password, IP address or location did not match"" is displayed","P1"
+"TC_AH_019","Input Validation","L14, P10","Verify submitting an email containing two ""@"" symbols","Negative","Login page https://app.wingify.com/#/login is open","1. Enter ""user@@domain""
+2. Enter a password
+3. Click ""Sign in""","Email: user@@domain; Password: Abc12345","User remains on #/login and error ""Your email, password, IP address or location did not match"" is displayed","P1"
+"TC_AH_020","Input Validation","P09, L15","Verify real-time validation on blur for an invalid email","Negative","Login page https://app.wingify.com/#/login is open","1. Enter ""user@@domain"" in ""Email address""
+2. Click into ""Password""","Email: user@@domain","Immediate validation feedback is shown for ""Email address"" on blur (P09). Exact text: Insufficient information to determine. Known conflict: L15 observed no visible message.","P1"
+"TC_AH_021","Input Validation","P10, L03","Verify the email keyboard on mobile","Responsive","Mobile device; login page is open","1. Tap ""Email address""","N/A","A specialized email keyboard is shown (P10); the field input type is ""email"" (L03)","P2"
+"TC_AH_022","Password","L04","Verify the password is masked by default","Security","Login page https://app.wingify.com/#/login is open","1. Enter ""Secret#123"" in ""Password""","Password: Secret#123","Input is masked (type ""password"")","P1"
+"TC_AH_023","Password","L05","Verify ""Toggle password visibility"" reveals the password","Positive","Login page https://app.wingify.com/#/login is open","1. Enter ""Secret#123"" in ""Password""
+2. Click ""Toggle password visibility""","Password: Secret#123","Password input type changes to ""text"" and ""Secret#123"" is readable","P2"
+"TC_AH_024","Password","L05","Verify a second toggle masks the password again","Positive","Login page https://app.wingify.com/#/login is open","1. Enter ""Secret#123"" in ""Password""
+2. Click ""Toggle password visibility"" twice","Password: Secret#123","Password input type returns to ""password""","P2"
+"TC_AH_025","Password","L06, P13","Verify ""Forgot Password?"" opens the reset password view","Positive","Login page https://app.wingify.com/#/login is open","1. Click ""Forgot Password?""","N/A","URL becomes https://app.wingify.com/#/forgot-password with ""Email address"", ""Back"" and ""Reset Password""","P1"
+"TC_AH_026","Password","P13","Verify a password reset request for a registered email","Positive","Reset password view is open; a registered email is available","1. Enter the registered email
+2. Click ""Reset Password""
+3. Check the mailbox","Email: <valid_email>","An email-based reset with a secure token is delivered. Email content and on-screen confirmation: Insufficient information to determine.","P0"
+"TC_AH_027","Password","P11, L19","Verify the password strength indicator","Requirement Gap","Login page https://app.wingify.com/#/login is open","1. Type a password in ""Password""
+2. Observe the field area","Password: Abcdef#1234","PRD requires visual strength feedback (P11); none is present on the live page (L19)","P3"
+"TC_AH_028","Remember Me","L07","Verify ""Remember me"" is unchecked by default","UI","Login page https://app.wingify.com/#/login is open","1. Observe the ""Remember me"" checkbox","N/A","""Remember me"" is unchecked","P2"
+"TC_AH_029","Remember Me","P16, L07","Verify clicking the ""Remember me"" label toggles the checkbox","Positive","Login page https://app.wingify.com/#/login is open","1. Click the ""Remember me"" label text","N/A","Checkbox becomes checked (clickable labels, P16)","P2"
+"TC_AH_030","Remember Me","P02","Verify a persistent session when ""Remember me"" is checked","Positive","Login page https://app.wingify.com/#/login is open; valid credentials for an active account are available","1. Check ""Remember me""
+2. Log in with valid credentials
+3. Close and reopen the browser
+4. Open https://app.wingify.com/#/login","Email: <valid_email>; Password: <valid_password>","The login session persists. Duration: Insufficient information to determine.","P1"
+"TC_AH_031","Alternative Sign-in","P28, L09","Verify ""Sign in with Google"" starts Google login","Integration","Login page https://app.wingify.com/#/login is open","1. Click ""Sign in with Google""","N/A","Login with the Google identity provider is initiated. Destination page: Insufficient information to determine.","P1"
+"TC_AH_032","Alternative Sign-in","L10","Verify ""Sign in using SSO"" opens the SSO view","Positive","Login page https://app.wingify.com/#/login is open","1. Click ""Sign in using SSO""","N/A","URL becomes https://app.wingify.com/#/sso with ""Email address"", ""Back"" and ""Sign in""","P1"
+"TC_AH_033","Alternative Sign-in","P08, P26","Verify SSO login for an SSO-enabled organization","Integration","SSO view is open; organization has SAML or OAuth SSO configured","1. Enter the organization email
+2. Click ""Sign in""
+3. Authenticate with the organization identity provider","Email: <sso_enabled_email>","User authenticates through the enterprise identity provider and is transitioned to the main dashboard","P1"
+"TC_AH_034","Alternative Sign-in","P07, P26","Verify a 2FA-enabled user must complete a second factor","Integration","Account has 2FA enabled","1. Log in with valid email and password","Email: <2fa_email>; Password: <valid_password>","A second authentication factor is required before the dashboard is reached. Second-factor UI: Insufficient information to determine.","P0"
+"TC_AH_035","Alternative Sign-in","L09","Verify ""Sign in with Passkey"" is covered by requirements","Requirement Gap","Login page https://app.wingify.com/#/login is open","1. Observe ""Sign in with Passkey""","N/A","Present on the live page (L09) but not in the PRD. Expected behavior: Insufficient information to determine.","P2"
+"TC_AH_036","Alternative Sign-in","P28, L19","Verify Microsoft social login","Requirement Gap","Login page https://app.wingify.com/#/login is open","1. Observe the alternative sign-in options","N/A","PRD lists Microsoft as an optional identity provider (P28); no Microsoft option is present (L19)","P3"
+"TC_AH_037","Links","P03, L11","Verify ""Start a FREE TRIAL"" opens the free trial page","Positive","Login page https://app.wingify.com/#/login is open","1. Click ""Start a FREE TRIAL""","N/A","https://wingify.com/free-trial/ opens","P2"
+"TC_AH_038","Links","L12","Verify ""Privacy policy"" opens the privacy policy page","Positive","Login page https://app.wingify.com/#/login is open","1. Click ""Privacy policy""","N/A","https://wingify.com/privacy-policy/ opens","P3"
+"TC_AH_039","Links","L12","Verify ""Terms"" opens the terms page","Positive","Login page https://app.wingify.com/#/login is open","1. Click ""Terms""","N/A","https://wingify.com/terms/ opens","P3"
+"TC_AH_040","Security","P22, L17","Verify the login page is served over HTTPS","Security","Browser is open","1. Open https://app.wingify.com/#/login
+2. Inspect the connection details","N/A","Connection uses HTTPS (SSL/TLS)","P0"
+"TC_AH_041","Security","P22","Verify HTTP access is enforced to HTTPS","Security","Browser is open","1. Open http://app.wingify.com/#/login","URL: http://app.wingify.com/#/login","The page is not served over plain HTTP; HTTPS is enforced. Enforcement mechanism: Insufficient information to determine.","P0"
+"TC_AH_042","Security","P32, P22","Verify login credentials are transmitted encrypted","Security","Login page https://app.wingify.com/#/login is open","1. Open DevTools > Network
+2. Submit any email and password
+3. Inspect the login request","Email: qa.probe@example.com; Password: AnyPass#123","The login request is sent over HTTPS","P0"
+"TC_AH_043","Security","P23","Verify repeated failed attempts are throttled","Security","Dedicated test account","1. Submit a wrong password repeatedly for the same account","Email: <test_account_email>; Password: WrongPass#123","Requests are throttled. Threshold, lockout duration and message: Insufficient information to determine.","P0"
+"TC_AH_044","Security","P06","Verify the session times out","Security","User is logged in","1. Stay idle beyond the configured timeout
+2. Perform an action","N/A","The session ends after the configured timeout. Timeout value and resulting screen: Insufficient information to determine.","P1"
+"TC_AH_045","Accessibility","P15, L13","Verify auto-focus on the ""Email address"" field","Accessibility","Browser is open","1. Open https://app.wingify.com/#/login
+2. Start typing without clicking","Text: qa","Typed text appears in ""Email address""","P2"
+"TC_AH_046","Accessibility","P20","Verify keyboard access to all interactive elements","Accessibility","Login page https://app.wingify.com/#/login is open","1. Press Tab through the page
+2. Activate each control with the keyboard","N/A","Every interactive element can be reached and operated with the keyboard","P1"
+"TC_AH_047","Accessibility","P18, L03, L04, L05","Verify screen reader labels","Accessibility","Screen reader running; login page open","1. Navigate the form with the screen reader","N/A","Fields and buttons are announced with labels, including ""Email address"", ""Password"" and ""Toggle password visibility""","P1"
+"TC_AH_048","Accessibility","P19","Verify high contrast mode support","Accessibility","OS high contrast mode enabled","1. Open https://app.wingify.com/#/login","N/A","The page is usable in high contrast mode. Specific options: Insufficient information to determine.","P3"
+"TC_AH_049","Accessibility","P29","Verify WCAG 2.1 AA compliance","Accessibility","Login page https://app.wingify.com/#/login is open","1. Run a WCAG 2.1 AA audit on the page","N/A","No WCAG 2.1 AA violations are reported","P2"
+"TC_AH_050","Responsive","P14","Verify the layout on a mobile device","Responsive","Mobile device or emulator","1. Open https://app.wingify.com/#/login","N/A","Interface is mobile-optimized and all login controls are usable","P2"
+"TC_AH_051","Responsive","P14","Verify controls are touch-friendly","Responsive","Mobile device","1. Tap each button, link and checkbox","N/A","Controls are touch-friendly. Minimum target size: Insufficient information to determine.","P3"
+"TC_AH_052","Performance","P24","Verify the page loads within 2 seconds","Performance","Standard connection; cache cleared","1. Open https://app.wingify.com/#/login
+2. Measure load time","N/A","Page loads within 2 seconds","P1"
+"TC_AH_053","Performance","P17","Verify a loading state during authentication","Performance","Login page https://app.wingify.com/#/login is open; valid credentials for an active account are available","1. Submit valid credentials on a throttled network","Email: <valid_email>; Password: <valid_password>","Clear feedback is shown while authentication is processing. Appearance: Insufficient information to determine.","P2"
+"TC_AH_054","Performance","P25","Verify assets are compressed and minified","Performance","Login page https://app.wingify.com/#/login is open","1. Inspect CSS, JS and image responses in DevTools > Network","N/A","CSS and JavaScript are minified and images are compressed","P3"
+"TC_AH_055","Integration","P27","Verify login success and failure are tracked","Integration","Access to the login analytics","1. Perform one failed and one successful login
+2. Check the tracking data","Email: <valid_email>; Password: WrongPass#123 then <valid_password>","Both outcomes are tracked. Tool and event names: Insufficient information to determine.","P3"
+"TC_AH_056","Integration","P30, L16","Verify a recovery path is offered after a failed login","Positive","Login page https://app.wingify.com/#/login is open","1. Submit invalid credentials
+2. Observe the page","Email: qa.probe@example.com; Password: WrongPass#123","""Reset Password"" is visible after the failure (L16). Inference (low confidence): it leads to the reset password view","P2"
+"TC_AH_057","Requirement Gap","P31, L01","Verify product branding and domain","Requirement Gap","Browser is open","1. Open https://app.vwo.com
+2. Note the final URL and branding","URL: https://app.vwo.com","PRD names VWO at app.vwo.com (P31); the live page is Wingify (L01). Redirect behavior: Insufficient information to determine.","P2"
+"TC_AH_058","Requirement Gap","P04, L19","Verify the Light/Dark Mode announcement banner","Requirement Gap","Login page https://app.wingify.com/#/login is open","1. Observe the full page","N/A","PRD lists the banner (P04); it is not present on the live page (L19)","P3"
+"TC_AH_059","Requirement Gap","P21","Verify Light and Dark Mode theme support","Requirement Gap","Login page https://app.wingify.com/#/login is open","1. Look for a theme option","N/A","Light and Dark Mode options are available (P21). Location of the control: Insufficient information to determine.","P3"
